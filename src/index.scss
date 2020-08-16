@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background-color: #f3f3f3;
+  scroll-behavior: smooth;
+}
+
+input, textarea{
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.login{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  
+  &__button{
+    height: 40px;
+    padding: 5px 30px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #1967d2;
+    cursor: pointer;
+    line-height: 30px;
+
+    &:active{
+      background-color: #0058d3;
+      box-shadow: #ccc 0 0 5px;
+    }
+
+    svg{
+      margin: 5px;
+      float: left;
+    }
+  }
+}
+
+@import "./assets/css/header.scss";
+
+.container{
+  display: flex;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  @import "./assets/css/post.scss";
+
+  .left, .right{
+    width: 320px;
+    margin: 0 10px;
+
+    .menu {
+      margin-top: 20px;
+
+      &-fixed{
+        position: fixed;
+        top: 60px;
+        width: 320px;
+        bottom: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li{
+        height: 50px;
+        padding: 5px;
+        margin: 5px 0;
+        border-radius: 5px;
+        cursor: pointer;
+
+        & .menu-item{ 
+          display: flex;
+          height: 100%;
+          text-decoration: none;
+
+          &:visited {
+            color: unset;
+          }
+
+          &__icon{
+            position: relative;
+            display: flex;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            
+            img{
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+            }
+
+            &-online, &-offline{
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              background-color: #aaaaaa;
+              border: 2px solid #ffffff;
+              border-radius: 50%;
+              bottom: 0px;
+              right: 0px;
+            }
+
+            &-online{
+              background-color: rgb(0, 180, 0);
+            }
+          }
+
+          &__item{
+            line-height: 40px;
+            margin-left: 10px;
+          }
+        }
+
+        &:hover{
+          background-color: #dddddd;
+        }
+      }
+    }
+  }
+
+  .right{
+
+    .menu{
+
+      &-title{
+        display: flex;
+
+        h2 {
+          flex: 1;
+          color: #555555;
+          line-height: 30px;
+        }
+
+        .btn-search{
+          width: 30px;
+          height: 30px;
+          background-color: transparent;
+          color: #555555;
+          border: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@import "./assets/css/dialog.scss";
+@import "./assets/css/chat.scss";
+
+.splash-screen{
+  display: flex;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+
+  &__loading{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #1967d2;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin .5s infinite linear;
+  }
+}
+
+.not-found{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  background-color: #fff;
+
+  h1 {
+    font-size: 150px;
+    font-weight: 100;
+    letter-spacing: 15px;
+  }
+
+  h3{
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+
+  .button{
+    padding: 10px 20px;
+    background-color: #1967d2;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+}
+
+@keyframes spin{
+  to{
+    transform: rotate(1turn);
+  }
+}

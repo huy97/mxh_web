@@ -1,0 +1,407 @@
+.post {
+    flex-basis: 744px;
+    margin: 0 10px;
+
+    &-create {
+        display: flex;
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        align-items: center;
+
+        &__avatar {
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        }
+
+        &__input {
+            flex: 1;
+            margin-left: 10px;
+
+            input {
+                width: 100%;
+                height: 50px;
+                border-radius: 25px;
+                border: 0;
+                background-color: #eeeeee;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    &-panel {
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+
+        &__avatar {
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        }
+
+        &__menu {
+            flex: 1;
+            margin-left: 10px;
+
+            &-name {
+                height: 40px;
+                line-height: 40px;
+                margin-bottom: 10px;
+            }
+
+            &-input {
+                margin-bottom: 10px;
+
+                input {
+                    width: 100%;
+                    height: 40px;
+                    padding: 5px 20px;
+                    border: 0;
+                    border-radius: 5px;
+                    background-color: #eeeeee;
+                }
+            }
+
+            &-text {
+                margin-bottom: 10px;
+
+                textarea {
+                    width: 100%;
+                    height: 150px;
+                    max-height: 600px;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    border: 0;
+                    background-color: #eeeeee;
+                    resize: vertical;
+                    outline: none;
+                }
+            }
+        }
+
+        &__bottom {
+            height: 30px;
+            flex-basis: 100%;
+            margin-top: 10px;
+
+            &-btn__create {
+                display: block;
+                width: 100%;
+                height: 30px;
+                background-color: #cccccc;
+                color: #ffffff;
+                border: 0;
+                border-radius: 5px;
+                cursor: no-drop;
+
+                &.active {
+                    background-color: #1967d2;
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-container {
+
+        &__empty{
+            position: relative;
+            margin: 10px 0;
+            text-align: center;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 100%;
+                border-top: 1px solid #dddddd;
+            }
+
+            span{
+                position: relative;
+                line-height: 20px;
+                background-color: #f3f3f3;
+                color: #555555;
+                z-index: 1;
+                padding: 10px;
+            }
+        }
+
+        &__loading{
+            display: flex;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+
+            &::before{
+                display: block;
+                content: '';
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 2px solid rgb(0, 89, 255);
+                border-top-color: transparent;
+                animation: spin-loading  .5s infinite linear;
+            }
+        }
+
+        .post-item {
+            position: relative;
+            width: 100%;
+            margin: 10px 0;
+            padding: 20px 10px 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+
+            &__statistic{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                
+                & > span{
+                    cursor: pointer;
+                }
+
+                svg{
+                    vertical-align: -0.2rem;
+                    color: #1967d2;
+                }
+
+                b{
+                    cursor: pointer;
+                    margin-left: 2px;
+                }
+
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                &-user{
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    &__avatar {
+                        width: 30px;
+                        height: 30px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    &__info {
+                        flex: 1;
+                        margin-left: 5px;
+                        line-height: 30px;
+                    }
+                }
+            }
+
+            &__modify{
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 5px;
+
+                &-btn{
+                    display: flex;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 0;
+                    cursor: pointer;
+                    justify-content: center;
+                    background-color: #fff;
+                    align-items: center;
+
+                    .dot{
+                        display: inline-block;
+                        width: 3px;
+                        height: 3px;
+                        background-color: #000000;
+                        margin: 1.5px;
+                        border-radius: 50%;
+                    }
+
+                    &:hover{
+                        background-color: #eeeeee;
+                    }
+                }
+
+                &-menu{
+                    
+                }
+            }
+
+            &__user {
+                display: flex;
+                margin-bottom: 20px;
+
+                &-avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                }
+
+                &-info {
+                    display: flex;
+                    margin-left: 10px;
+                    flex-flow: column wrap;
+
+                    &__name {
+                        height: 20px;
+                    }
+
+                    &__time {
+                        display: inline-block;
+                        height: 20px;
+                        font-size: 12px;
+                        line-height: 20px;
+                        color: #555555;
+
+                        svg {
+                            vertical-align: -1px;
+                        }
+                    }
+                }
+            }
+
+            &__title {
+                margin-bottom: 10px;
+
+                h1 {
+                    font-size: 24px;
+                }
+            }
+
+            &__content {
+                margin-bottom: 10px;
+
+                &.collapsed {
+                    max-height: 500px;
+                }
+            }
+
+            &__action {
+                display: flex;
+                height: 40px;
+                padding: 5px 0;
+                border-top: 1px solid #dddddd;
+
+                &-comment,
+                &-reaction {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: #555555;
+
+                    &.active{
+                        color: #1967d2;
+                    }
+
+                    &:hover {
+                        background-color: #eeeeee;
+                    }
+
+                    span {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .post-comment {
+            border-top: 1px solid #dddddd;
+            padding-top: 10px;
+            
+            &__create{
+                display: flex;
+                margin-top: 10px;
+
+                &-avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    padding-left: 0;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                }
+
+                &-input{
+                    flex: 1;
+
+                    textarea{
+                        display: block;
+                        width: 100%;
+                        height: 40px;
+                        padding: 10px 20px;
+                        line-height: 20px;
+                        border: 0;
+                        border-radius: 20px;
+                        background-color: #eeeeee;
+                        resize: none;
+                    }
+                }
+            }
+
+            &__count {
+                display: inline-block;
+                font-weight: bold;
+                color: #555555;
+                cursor: pointer;
+                margin-bottom: 5px;
+
+                &:hover {
+                    color: #333333;
+                }
+            }
+
+            @import "./comment.scss";
+
+        }
+    }
+}
+
+
+@keyframes spin-loading {
+    to{
+        transform: rotate(1turn);
+    }
+}

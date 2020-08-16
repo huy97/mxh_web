@@ -1,0 +1,79 @@
+.comment-item{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    
+    &__avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding-left: 0;
+
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    }
+
+    &__content{
+        flex: 1;
+        margin-left: 5px;
+        padding: 5px;
+        background-color: #eeeeee;
+        border-radius: 5px;
+
+        &-name{
+            margin-bottom: 5px;
+        }
+
+        &-text{
+            display: block;
+            line-height: 20px;
+            white-space: break-spaces;
+        }
+    }
+
+    &__action{
+        flex-basis: 100%;
+        margin-left: 35px;
+        font-size: 12px;
+
+        &-reply, &-time, &-reply-count{
+            position: relative;
+            display: inline-block;
+            margin: 5px 10px;
+            margin-left: 0;
+            cursor: pointer;
+        }
+
+        &-reply, &-reply-count{
+            &::after{
+                position: absolute;
+                content: '.';
+                right: -8px;
+                top: -3px;
+            }
+
+            &:hover{
+                color: #555555;
+            }
+        }
+
+        &-reply-count{
+            &::after{
+                right: unset;
+                left: -5px;
+            }
+        }
+
+        &-time{
+            color: #555555;
+        }
+    }
+}
+
+.reply{
+    margin-left: 35px;
+    margin-bottom: 10px;
+}

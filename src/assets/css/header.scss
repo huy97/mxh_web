@@ -1,0 +1,138 @@
+.header {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: #555 0 -5px 10px;
+
+    &-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &__logo {
+        width: 100px;
+        height: 50px;
+        margin: 5px 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            width: 120px;
+            margin: 0 20px;
+            padding: 5px;
+            color: #555555;
+            cursor: pointer;
+
+            a:visited {
+                color: unset;
+            }
+
+            &.active {
+                border-bottom: 2px solid #1967d2;
+                a {
+                    color: #1967d2;
+                }
+
+                & > .header-nav__item-icon:hover {
+                    background-color: #ffffff;
+                }
+            }
+
+            &-icon {
+                display: flex;
+                width: 110px;
+                height: 50px;
+                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: #eeeeee;
+                }
+            }
+        }
+    }
+
+    &-auth {
+        display: flex;
+        width: 220px;
+        align-items: center;
+
+        &__info {
+            display: flex;
+            width: 100px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 20px;
+            margin: 0 20px;
+
+            &.active {
+                background-color: #e8f0fe;
+                &:hover {
+                    background-color: #e8f0fe;
+                }
+                & > a {
+                    color: #1967d2;
+                }
+            }
+
+            &:hover {
+                background-color: #eeeeee;
+            }
+
+            &-avatar {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                }
+            }
+
+            &-name {
+                display: block;
+                width: 50px;
+                font-weight: bold;
+                margin-left: 10px;
+                line-height: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:visited {
+                    color: unset;
+                }
+            }
+        }
+
+        &__action {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            margin: 0 20px;
+            border-radius: 50%;
+            background-color: #eeeeee;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}
