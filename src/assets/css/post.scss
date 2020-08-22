@@ -2,6 +2,50 @@
     flex-basis: 744px;
     margin: 0 10px;
 
+    .user-info{
+        position: relative;
+        width: 100%;
+        height: 280px;
+
+        &__cover{
+            width: 100%;
+            height: 200px;
+            background-color: #eeeeee;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__avatar{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        h2{
+            height: 30px;
+            margin-top: 50px;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
     &-create {
         display: flex;
         margin: 20px 0;
@@ -276,6 +320,15 @@
                     display: flex;
                     margin-left: 10px;
                     flex-flow: column wrap;
+                    
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+
+                        &:visited{
+                            color: inherit;
+                        }
+                    }
 
                     &__name {
                         height: 20px;

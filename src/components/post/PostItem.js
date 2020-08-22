@@ -8,6 +8,7 @@ import Comment from 'components/comment';
 import PostModify from './PostModify';
 import PostStatistic from './PostStatistic';
 import LoadImage from 'components/common/LoadImage';
+import { Link } from 'react-router-dom';
 
 const PostItem = props => {
     const {item, currentUser} = props;
@@ -34,7 +35,7 @@ const PostItem = props => {
                     <LoadImage src={item.user.avatar} alt={item.user.fullName}/>
                 </div>
                 <div className="post-item__user-info">
-                    <b className="post-item__user-info__name">{item.user.fullName}</b>
+                    <Link to={`/user/${item.user._id}`}><b className="post-item__user-info__name">{item.user.fullName}</b></Link>
                     <i className="post-item__user-info__time"><RiTimeLine/> {timeSince(item.createdAt)}</i>
                 </div>
             </div>

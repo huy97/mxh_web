@@ -8,7 +8,7 @@ import Post from 'components/post';
 import OnlineList from 'components/home/OnlineList';
 
 const HomePage = props => {
-    const user = useSelector(state => state.user);
+    const currentUser = useSelector(state => state.user);
 
     return (
         <Fragment>
@@ -20,10 +20,10 @@ const HomePage = props => {
                             <li>
                                 <Link to="/me" className="menu-item">
                                     <div className="menu-item__icon">
-                                        <img src={user.info.avatar} alt={user.info.fullName}/>
+                                        <img src={currentUser.info.avatar} alt={currentUser.info.fullName}/>
                                     </div>
                                     <div className="menu-item__item">
-                                        {user.info.fullName}
+                                        {currentUser.info.fullName}
                                     </div>
                                 </Link>
                             </li>
@@ -40,7 +40,7 @@ const HomePage = props => {
                         </ul>
                     </div>
                 </div>
-                <Post user={user}/>
+                <Post/>
                 <OnlineList/>
             </div>
             <GlobalConversation/>
