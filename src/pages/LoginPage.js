@@ -23,7 +23,7 @@ const LoginPage = props => {
 
     if(user && user.isLoggedIn) return <Redirect to="/"/>;
     return (
-        <FacebookProvider appId="328280508221400">
+        <FacebookProvider appId="268652284472529">
             <Login
                 scope="email"
                 onCompleted={handleResponse}

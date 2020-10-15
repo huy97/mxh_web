@@ -9,7 +9,7 @@ const SocketProvider = ({children}) => {
     const user = useSelector(state => state.user);
     useEffect(() => {
         if(user && user.info){
-            let socketServer = io.connect("http://localhost:9010", {
+            let socketServer = io.connect("https://api.mxh.myserver.mobi", {
                 query: {
                     accessToken: user.info.accessToken
                 }

@@ -550,6 +550,11 @@
             .chat-list__item-avatar{
                 width: 100px;
                 height: 100px;
+
+                &__first, &__last{
+                    width: 60px;
+                    height: 60px;
+                }
             }
         }
     }

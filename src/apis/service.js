@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000/v1";
+const API_URL = "https://api.mxh.myserver.mobi/v1";
 const services = axios.create({
     baseURL: API_URL,
     timeout: 30000,
