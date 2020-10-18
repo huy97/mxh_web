@@ -11,6 +11,7 @@ const HomePage = React.lazy(() => import('pages/HomePage'));
 const UserPage = React.lazy(() => import('pages/UserPage'));
 const ChatPage = React.lazy(() => import('pages/ChatPage'));
 const LoginPage = React.lazy(() => import('pages/LoginPage'));
+const ManagerHomePage = React.lazy(() => import('pages/manager/HomePage'));
 
 function AuthRoute(props){
   const [isRestoreToken, setRestoreToken] = useState(true);
@@ -46,9 +47,11 @@ function App() {
       <BrowserRouter>
         <Switch>
             <AuthRoute path="/" exact component={HomePage} />
-            <AuthRoute path="/me" component={UserPage} />
+            <AuthRoute path="/me" component={UserPage} /> 
             <AuthRoute path="/user/:userId" component={UserPage} />
             <AuthRoute path="/chat" component={ChatPage} />
+            <AuthRoute path="/manager" exact component={ManagerHomePage}/>
+            <AuthRoute path="/manager/users" component={LoginPage}/>
             <Route path="/login" component={LoginPage}/>
             <Route component={NotFoundPage}/>
         </Switch>
